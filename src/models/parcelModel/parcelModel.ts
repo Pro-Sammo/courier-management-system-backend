@@ -321,6 +321,7 @@ export class ParcelModel extends Schema {
         "created_at",
         "amount",
         "payment_mode",
+        "pickup_address",
         "delivery_address",
         "receiver_name",
         "receiver_phone"
@@ -368,7 +369,8 @@ export class ParcelModel extends Schema {
         "p.status",
         "p.amount",
         "p.is_paid",
-        "p.created_at"
+        "p.created_at",
+        "p.payment_mode"
       )
       .whereRaw("DATE(p.created_at) = CURRENT_DATE")
       .orderBy("p.created_at", "desc");
@@ -383,7 +385,6 @@ export class ParcelModel extends Schema {
         "p.receiver_name",
         "p.amount",
         "p.status",
-        "p.status_history",
         "p.created_at",
         "p.updated_at"
       )

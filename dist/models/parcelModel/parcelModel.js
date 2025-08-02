@@ -219,7 +219,7 @@ class ParcelModel extends schema_1.default {
             });
             const recentBooking = yield db("parcels")
                 .withSchema(this.DBO_SCHEMA)
-                .select("id", "tracking_id", "status", "created_at", "amount", "payment_mode", "delivery_address", "receiver_name", "receiver_phone")
+                .select("id", "tracking_id", "status", "created_at", "amount", "payment_mode", "pickup_address", "delivery_address", "receiver_name", "receiver_phone")
                 .where("customer_id", customer_id)
                 .orderBy("id", "desc")
                 .limit(5);
@@ -248,12 +248,12 @@ class ParcelModel extends schema_1.default {
                 .from("dbo.parcels as p");
             const daily_booking = yield db("dbo.parcels as p")
                 .join("dbo.users as u", "p.customer_id", "u.id")
-                .select("p.id", "p.tracking_id", "u.name as customer_name", "p.sender_name", "p.receiver_name", "p.status", "p.amount", "p.is_paid", "p.created_at")
+                .select("p.id", "p.tracking_id", "u.name as customer_name", "p.sender_name", "p.receiver_name", "p.status", "p.amount", "p.is_paid", "p.created_at", "p.payment_mode")
                 .whereRaw("DATE(p.created_at) = CURRENT_DATE")
                 .orderBy("p.created_at", "desc");
             const failed_deliveries = yield db("dbo.parcels as p")
                 .join("dbo.users as u", "p.customer_id", "u.id")
-                .select("p.id", "p.tracking_id", "u.name as customer_name", "p.sender_name", "p.receiver_name", "p.amount", "p.status", "p.status_history", "p.created_at", "p.updated_at")
+                .select("p.id", "p.tracking_id", "u.name as customer_name", "p.sender_name", "p.receiver_name", "p.amount", "p.status", "p.created_at", "p.updated_at")
                 .where("p.status", "FAILED")
                 .orderBy("p.updated_at", "desc");
             return {
