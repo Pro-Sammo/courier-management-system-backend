@@ -22,7 +22,6 @@ const getConfig = () => {
         DB_PASS: process.env.DB_PASS,
         DB_HOST: process.env.DB_HOST,
         DB_PORT: process.env.DB_PORT,
-        CLIENT_URL: process.env.CLIENT_URL,
     };
 };
 const getSanitzedConfig = (config) => {

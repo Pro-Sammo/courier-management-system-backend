@@ -20,7 +20,6 @@ const sendParcelUpdateEmail_1 = require("../../../utils/templates/sendParcelUpda
 const dayjs_1 = __importDefault(require("dayjs"));
 const timezone_1 = __importDefault(require("dayjs/plugin/timezone"));
 const utc_1 = __importDefault(require("dayjs/plugin/utc"));
-const config_1 = __importDefault(require("../../../app/config"));
 dayjs_1.default.extend(utc_1.default);
 dayjs_1.default.extend(timezone_1.default);
 class AgentParcelService extends abstract_service_1.default {
@@ -111,7 +110,7 @@ class AgentParcelService extends abstract_service_1.default {
                     trackingId: parcel.tracking_id,
                     updatedAt: currentTime,
                     updateMessage: note,
-                    trackingLink: `${config_1.default.CLIENT_URL}/customer/track/${parcel.tracking_id}`,
+                    trackingLink: `${constants_1.CLIENT_URL}/customer/track/${parcel.tracking_id}`,
                 }),
                 emailSub: `${constants_1.PROJECT_NAME} - ${note} | ${parcel.tracking_id}`,
             });

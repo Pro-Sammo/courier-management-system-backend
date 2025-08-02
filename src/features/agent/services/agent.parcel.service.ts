@@ -1,6 +1,7 @@
 import { Request } from "express";
 import AbstractServices from "../../../abstract/abstract.service";
 import {
+  CLIENT_URL,
   PARCEL_STATUS,
   PROJECT_NAME,
 } from "../../../utils/miscellaneous/constants";
@@ -113,7 +114,7 @@ export class AgentParcelService extends AbstractServices {
         trackingId: parcel.tracking_id,
         updatedAt: currentTime,
         updateMessage: note,
-        trackingLink: `${config.CLIENT_URL}/customer/track/${parcel.tracking_id}`,
+        trackingLink: `${CLIENT_URL}/customer/track/${parcel.tracking_id}`,
       }),
       emailSub: `${PROJECT_NAME} - ${note} | ${parcel.tracking_id}`,
     });

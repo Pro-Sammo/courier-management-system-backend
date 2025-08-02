@@ -18,7 +18,6 @@ interface ENV {
   DB_USER: string | undefined;
   DB_PORT: string | undefined;
   DB_HOST: string | undefined;
-  CLIENT_URL: string | undefined;
 }
 
 // Config types
@@ -36,7 +35,6 @@ interface Config {
   DB_USER: string;
   DB_PORT: string;
   DB_HOST: string;
-  CLIENT_URL: string;
 }
 
 // Loading process.env as  ENV interface
@@ -54,7 +52,6 @@ const getConfig = (): ENV => {
     DB_PASS: process.env.DB_PASS,
     DB_HOST: process.env.DB_HOST,
     DB_PORT: process.env.DB_PORT,
-    CLIENT_URL: process.env.CLIENT_URL,
   };
 };
 
