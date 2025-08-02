@@ -9,7 +9,9 @@ export const origin: string[] = [
 	"http://10.10.220.46:3001",
 	"http://10.10.220.46:3002",
 	"https://main.d3koorpmhi8mya.amplifyapp.com",
-	"http://main.d3koorpmhi8mya.amplifyapp.com"
+	"https://www.main.d3koorpmhi8mya.amplifyapp.com",
+	"http://main.d3koorpmhi8mya.amplifyapp.com",
+	"http://www.main.d3koorpmhi8mya.amplifyapp.com"
 ];
 
 
