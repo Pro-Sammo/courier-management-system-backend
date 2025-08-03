@@ -52,7 +52,6 @@ class UserAuthService extends AbstractServices {
       const registration = await userModel.registerUser({
         ...rest,
         password: hashedPass,
-        role: ROLE.CUSTOMER,
       });
 
       //retrieve token data
@@ -62,7 +61,7 @@ class UserAuthService extends AbstractServices {
         email: rest.email,
         phone: rest.phone,
         photo: rest?.photo,
-        role: ROLE.CUSTOMER,
+        role: rest.role,
         status: true,
         create_date: new Date(),
       };

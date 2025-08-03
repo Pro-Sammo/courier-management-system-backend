@@ -25,7 +25,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const abstract_service_1 = __importDefault(require("../../../abstract/abstract.service"));
 const lib_1 = __importDefault(require("../../../utils/lib/lib"));
-const constants_1 = require("../../../utils/miscellaneous/constants");
 const config_1 = __importDefault(require("../../../app/config"));
 class UserAuthService extends abstract_service_1.default {
     //register user
@@ -64,7 +63,7 @@ class UserAuthService extends abstract_service_1.default {
                 //hash password
                 const hashedPass = yield lib_1.default.hashValue(password);
                 //register user
-                const registration = yield userModel.registerUser(Object.assign(Object.assign({}, rest), { password: hashedPass, role: constants_1.ROLE.CUSTOMER }));
+                const registration = yield userModel.registerUser(Object.assign(Object.assign({}, rest), { password: hashedPass }));
                 //retrieve token data
                 const tokenData = {
                     id: registration[0].id,
@@ -72,7 +71,7 @@ class UserAuthService extends abstract_service_1.default {
                     email: rest.email,
                     phone: rest.phone,
                     photo: rest === null || rest === void 0 ? void 0 : rest.photo,
-                    role: constants_1.ROLE.CUSTOMER,
+                    role: rest.role,
                     status: true,
                     create_date: new Date(),
                 };

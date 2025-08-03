@@ -20,7 +20,9 @@ export const PROJECT_NAME = "Courier Management System";
 export const PROJECT_LOGO =
 	"https://apsissolutions.com/wp-content/uploads/2021/02/Delivery-Management.png";
 
-export const CLIENT_URL = "https://main.d3koorpmhi8mya.amplifyapp.com";
+// export const CLIENT_URL = "https://main.d3koorpmhi8mya.amplifyapp.com";
+
+export const CLIENT_URL = "http://localhost:5173";
 
 // Email subject
 export const OTP_EMAIL_SUBJECT = "Your One Time Password For Verification";

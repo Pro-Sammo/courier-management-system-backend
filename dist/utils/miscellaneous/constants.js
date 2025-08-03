@@ -19,7 +19,8 @@ exports.origin = [
 //Project Info
 exports.PROJECT_NAME = "Courier Management System";
 exports.PROJECT_LOGO = "https://apsissolutions.com/wp-content/uploads/2021/02/Delivery-Management.png";
-exports.CLIENT_URL = "https://main.d3koorpmhi8mya.amplifyapp.com";
+// export const CLIENT_URL = "https://main.d3koorpmhi8mya.amplifyapp.com";
+exports.CLIENT_URL = "http://localhost:5173";
 // Email subject
 exports.OTP_EMAIL_SUBJECT = "Your One Time Password For Verification";
 // Default data get limit
